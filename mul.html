@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+
+    table{
+
+        background-color: #bde9ba;
+    }
+
+</style>
+
+</head>
+<body>
+    
+    <form method="get">
+
+        <lable>How many rows for your multiplication table?</lable>
+        <input type ="text" id="i1"><br><br>
+        <lable>How many columns for your multiplication table? </lable>
+        <input type ="text" id="i2"><br><br>
+        <input type="submit" id="submit" value="Draw Multiplication Table" onclick="createTable()">
+    </form>
+
+    <script>
+
+        function createTable(){
+        
+        var row = parseInt(document.getElementById("i1").value);
+        var col = parseInt(document.getElementById("i2").value);
+   
+
+        var i,j;
+
+        var out ="<table border = '1' width = '500' cellpadding = '5' cellspacing='0'";
+        
+        for(i=1; i<row ; i++){
+
+        var out = out + "<tr>"
+
+       for(j=1; j<col;j++){
+     
+       out = out +"<td>"+ i*j +"</td>";
+        
+       }
+        
+      out = out + "</tr>";
+      }
+
+      out = out + "</table>";
+
+      document.write(out);
+        
+        }
+    
+        
+ </script>
+
+
+
+</body>
+</html>
